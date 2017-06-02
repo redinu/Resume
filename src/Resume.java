@@ -54,10 +54,14 @@ public class Resume {
 			System.out.println(ex.getPosition());
 			System.out.print(ex.getCompany() + ", ");
 			System.out.println(ex.getStartDate() + "-" + ex.getEndDate());
-			System.out.println(ex.getDuty());
+			for(String s: ex.getDuty()){
+				System.out.println("Duty 1:" + s);
+			}
+			
 			System.out.println();
 		}
 		System.out.println();
+		
 		System.out.println("Skills");
 		for(Skills sk: skills){
 			if(sk.getRating() > 8){
@@ -129,7 +133,19 @@ public class Resume {
 				System.out.println("Please Enter the ende date");
 				exp1.setEndDate(scn.nextLine());
 				System.out.println("Please Enter your duties");
-				exp1.setDuty(scn.nextLine());
+				exp1.getDuty().add((scn.nextLine()));
+				
+				while(hasNext){
+				System.out.println("Do you want to add another duty?");
+				
+					if(addMore.equalsIgnoreCase(scn.nextLine())){
+					hasNext = true;
+					 exp1.getDuty().add((scn.nextLine()));
+					} else {
+					hasNext = false;
+					}
+					
+				}
 				experience.add(exp1);
 					
 				System.out.println("Do you want to add another experience?");

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Experience {
@@ -6,7 +7,7 @@ public class Experience {
 	private String endDate;
 	private String position;
 	private String company;
-	private String duty;
+	private ArrayList<String> duty = new ArrayList<String>();
 	
 	
 	
@@ -34,11 +35,11 @@ public class Experience {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public String getDuty() {
+	public ArrayList<String> getDuty() {
 		return duty;
 	}
-	public void setDuty(String duty) {
-		this.duty = duty;
+	public void setDuty(ArrayList<String> string) {
+		this.duty = string;
 	}
 	@Override
 	public String toString() {
