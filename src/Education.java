@@ -4,7 +4,6 @@ public class Education {
 	
 	private String typeOfDegree;
 	private String institute;
-	private String city;
 	private String endDate;
 	
 	
@@ -20,12 +19,7 @@ public class Education {
 	public void setInstitute(String institute) {
 		this.institute = institute;
 	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
+	
 	public String getEndDate() {
 		return endDate;
 	}
@@ -34,7 +28,7 @@ public class Education {
 	}
 	@Override
 	public String toString() {
-		return "Education [typeOfDegree=" + typeOfDegree + ", institute=" + institute + ", city=" + city + ", endDate="
+		return "Education [typeOfDegree=" + typeOfDegree + ", institute=" + institute + ", " + ", endDate="
 				+ endDate + "]";
 	}
 	

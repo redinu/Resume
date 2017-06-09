@@ -1,4 +1,5 @@
 
+
 public class ResumeApp {
 
 	public static void main(String[] args) {
@@ -7,6 +8,6 @@ public class ResumeApp {
 		resume.saveResume();
 		resume.printResume();
 
-	}
 
+	}
 }
