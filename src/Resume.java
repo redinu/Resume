@@ -145,14 +145,31 @@ public class Resume {
 		String inst  = "";
 
 		while (hasNext){
+			isValid = false;
 			Education edu1 = new Education();
+			while(!isValid){
 			degree = scn.nextLine();
 			edu1.setTypeOfDegree(degree);
-
-
+			if (!degree.matches("[a-zA-Z_]+")) {
+			    System.out.println("Invalid name");
+			}else{
+				isValid = true;
+			}
+			}
+			isValid = false;
+			
+			while(!isValid){
 			System.out.println("Enter the institute?");
 			inst = scn.nextLine();
 			edu1.setInstitute(inst);
+			if (!inst.matches("[a-zA-Z_]+")) {
+			    System.out.println("Invalid name");
+			}else{
+				isValid = true;
+			}
+			}
+			isValid = false;
+
 
 
 			System.out.println("Enter the end date?");
@@ -207,15 +224,31 @@ public class Resume {
 			hasNext = true;
 
 			while (hasNext){
-				System.out.println("Please Enter your position");
+				isValid = false;
 				Experience exp1 = new Experience();
+				while(!isValid){
+				System.out.println("Please Enter your position");
 				pos = scn.nextLine();
 				exp1.setPosition(pos);
-
+				if (!pos.matches("[a-zA-Z_]+")) {
+				    System.out.println("Invalid name");
+				}else{
+					isValid = true;
+				}
+				}
+				isValid = false;
+				
+				while(!isValid){
 				System.out.println("Please Enter the company name");
 				cmp = scn.nextLine();
 				exp1.setCompany(cmp);
-
+				if (!cmp.matches("[a-zA-Z_]+")) {
+				    System.out.println("Invalid name");
+				}else{
+					isValid = true;
+				}
+				}
+				isValid = false;
 				System.out.println("Please Enter the start date");
 				sDate = scn.nextLine();
 				exp1.setStartDate(sDate);
@@ -223,11 +256,18 @@ public class Resume {
 				System.out.println("Please Enter the ende date");
 				eDate= scn.nextLine();
 				exp1.setEndDate(eDate);
-
+				
+				while(!isValid){
 				System.out.println("Please Enter your duties");
 				dut = scn.nextLine();
 				exp1.getDuty().add((dut));
-
+				if (!dut.matches("[a-zA-Z_]+")) {
+				    System.out.println("Invalid name");
+				}else{
+					isValid = true;
+				}
+				} 
+				
 				String duty = "insert into duty(duty) values(?)";
 
 				try{
@@ -316,10 +356,17 @@ public class Resume {
 		String rating = "";
 		System.out.println("Enter all your skills");
 		while (hasNext){
+			isValid = false;
 			Skills sk = new Skills();
+			while(!isValid){
 			skl = scn.nextLine();
 			sk.setSkill(skl);
-
+			if (!skl.matches("[a-zA-Z_]+")) {
+			    System.out.println("Invalid name");
+			}else{
+				isValid = true;
+			}
+			}
 			System.out.println("How do you rate yourself for this skill [highly skilled, proficient,familiar]");
 			rating = scn.nextLine();
 			sk.setRating(rating);	
