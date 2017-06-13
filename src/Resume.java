@@ -171,10 +171,17 @@ public class Resume {
 			isValid = false;
 
 
-
+			while(!isValid){
 			System.out.println("Enter the end date?");
 			eDate = scn.nextLine();
 			edu1.setEndDate(eDate);
+			if (!eDate.matches("[0-9]+")) {
+			    System.out.println("Invalid number");
+			}else{
+				isValid = true;
+			}
+			}
+			isValid = false;
 
 			System.out.println("Do you want to add another education?");
 
@@ -249,13 +256,30 @@ public class Resume {
 				}
 				}
 				isValid = false;
+				
+				while(!isValid){
 				System.out.println("Please Enter the start date");
 				sDate = scn.nextLine();
 				exp1.setStartDate(sDate);
-
-				System.out.println("Please Enter the ende date");
+				if (!eDate.matches("[0-9]+")) {
+				    System.out.println("Invalid number");
+				}else{
+					isValid = true;
+				}
+				}
+				isValid = false;
+				
+				while(!isValid){
+				System.out.println("Please Enter the end date");
 				eDate= scn.nextLine();
 				exp1.setEndDate(eDate);
+				if (!eDate.matches("[0-9]+")) {
+				    System.out.println("Invalid number");
+				}else{
+					isValid = true;
+				}
+				}
+				isValid = false;
 				
 				while(!isValid){
 				System.out.println("Please Enter your duties");
